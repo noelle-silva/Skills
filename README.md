@@ -8,13 +8,6 @@
 
 ## 技能索引
 
-- **browser-interaction**：浏览器交互（Chrome DevTools / Playwright）
-  - `chrome-devtools/chrome-devtools-cli`：DevTools 命令手册
-  - `chrome-devtools/a11y-debugging`：无障碍调试
-  - `chrome-devtools/cookie-debugging`：Cookie 调试
-  - `chrome-devtools/debug-optimize-lcp`：LCP 性能优化
-  - `chrome-devtools/memory-leak-debugging`：内存泄漏排查
-  - `playwright/playwright-cli`：Playwright 命令手册
-  - `playwright/playwright-script`：Playwright 脚本自动化
+- **browser-interaction**：浏览器交互（Chrome DevTools / Playwright），详情见其目录下的 README。
 
-未来新增 Skill 请在索引中追加一条。
+未来新增 Skill 请在此追加一条，明细写进该技能自己的 README。
