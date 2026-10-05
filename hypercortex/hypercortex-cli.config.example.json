@@ -1,0 +1,11 @@
+{
+  "endpoint": "http://127.0.0.1:16657",
+  "defaultRepo": "dev",
+  "repos": [
+    {
+      "id": "dev",
+      "description": "开发版 HyperCortex",
+      "key": "把这里替换成你的访问钥匙"
+    }
+  ]
+}

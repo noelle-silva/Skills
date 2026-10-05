@@ -17,6 +17,7 @@ Skill 下的内容只做正式改进：临时或试验性的东西一律不放�
 每条明细见其目录下的 README。
 
 - **browser-interaction**：浏览器交互（Chrome DevTools / Playwright）。
+- **hypercortex**：命令行操作 HyperCortex 知识库（读笔记/附件/收藏夹，写笔记/改面/传附件）。
 - **frontend-automated-testing**：前端代码级自动测试（通用搭法；含「源码拆分 / 重构期特征锁定」用法）。
 
 未来新增 Skill 请在此追加一条，明细写进该技能自己的 README。
