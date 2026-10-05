@@ -1,1 +1,7 @@
+# 全局通用忽略（所有技能共用）；各技能的特有忽略写在自己的子 .gitignore
 node_modules/
+.DS_Store
+Thumbs.db
+*.log
+.idea/
+.vscode/

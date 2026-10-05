@@ -1,0 +1,2 @@
+# browser-interaction 特有忽略（全局通用项见仓库根 .gitignore）
+.playwright-cli/
