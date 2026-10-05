@@ -8,6 +8,8 @@
 
 ## 技能索引
 
-- **browser-interaction**：浏览器交互（Chrome DevTools / Playwright），详情见其目录下的 README。
+每条明细见其目录下的 README。
+
+- **browser-interaction**：浏览器交互（Chrome DevTools / Playwright）。
 
 未来新增 Skill 请在此追加一条，明细写进该技能自己的 README。
