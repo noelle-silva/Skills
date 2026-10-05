@@ -53,12 +53,61 @@ function usage() {
   ].join('\n')
 }
 
-// 把 "true"/"false"/数字 还原成对应类型，其余按字符串。
+// 无类型信息时的兜底推断：布尔、数字、JSON 数组对象，其余按字符串。
 function coerce(value) {
   if (value === 'true') return true
   if (value === 'false') return false
   if (value !== '' && !Number.isNaN(Number(value))) return Number(value)
+  const trimmed = value.trim()
+  if (trimmed.startsWith('[') || trimmed.startsWith('{')) {
+    try {
+      return JSON.parse(trimmed)
+    } catch {
+      return value
+    }
+  }
   return value
+}
+
+// 按工具 inputSchema 声明的类型转换参数，避免把字符串型编号误判成数字。
+function coerceByType(value, type) {
+  if (value === true) return true
+  if (type === 'string') return String(value)
+  if (type === 'boolean') {
+    if (value === 'true') return true
+    if (value === 'false') return false
+    return value
+  }
+  if (type === 'integer' || type === 'number') {
+    const n = Number(value)
+    return Number.isNaN(n) ? value : n
+  }
+  if (type === 'array' || type === 'object') {
+    const trimmed = String(value).trim()
+    if (trimmed.startsWith('[') || trimmed.startsWith('{')) {
+      try {
+        return JSON.parse(trimmed)
+      } catch {
+        return value
+      }
+    }
+    return value
+  }
+  return coerce(value)
+}
+
+// 读取工具目录下的 tool.json，得到各参数的声明类型。
+function loadArgTypes(bodyDir) {
+  const toolJsonPath = path.join(bodyDir, 'tool.json')
+  if (!fs.existsSync(toolJsonPath)) return {}
+  try {
+    const schema = JSON.parse(fs.readFileSync(toolJsonPath, 'utf8'))
+    const props = schema?.inputSchema?.properties
+    if (!props || typeof props !== 'object') return {}
+    return Object.fromEntries(Object.entries(props).map(([key, value]) => [key, value?.type]))
+  } catch {
+    return {}
+  }
 }
 
 function parseArgs(argv) {
@@ -117,15 +166,19 @@ function main() {
   const configPath = typeof flags.config === 'string' ? flags.config : path.join(here, 'hypercortex-cli.config.json')
   const config = loadConfig(configPath)
 
+  const argTypes = loadArgTypes(tool.bodyDir)
   const argumentsMap = { action }
   const reserved = new Set(['json', 'config', 'help', 'h', 'timeout-ms'])
   for (const [key, value] of Object.entries(flags)) {
     if (reserved.has(key)) continue
-    argumentsMap[key] = value === true ? true : coerce(value)
+    argumentsMap[key] = value === true ? true : coerceByType(value, argTypes[key])
   }
   for (const extra of rest) {
     const eq = extra.indexOf('=')
-    if (eq > 0) argumentsMap[extra.slice(0, eq)] = coerce(extra.slice(eq + 1))
+    if (eq > 0) {
+      const key = extra.slice(0, eq)
+      argumentsMap[key] = coerceByType(extra.slice(eq + 1), argTypes[key])
+    }
   }
 
   const payload = {
