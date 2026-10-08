@@ -25,5 +25,8 @@ Skill 下的内容只做正式改进：临时或试验性的东西一律不放�
 - **frontend-automated-testing**：前端代码级自动测试（通用搭法；含「源码拆分 / 重构期特征锁定」用法）。
 - **anysearch**：实时网页搜索（网页搜索 / 垂直领域搜索 / 并行批量搜索 / URL 正文提取）。
 - **tavily**：网页搜索与内容提取工具集（search / extract / crawl / map / research 等，基于 Tavily 命令行）。
+- **taste-skill**：前端审美与设计技能集（12 个：极简 / 粗野 / 柔和 / 改版 / 图生代码 / 品牌套装等），来自 `Leonxlnx/taste-skill`（MIT）。
+- **ui-ux-pro-max**：UI/UX 设计智能技能集（7 个：设计系统 / 配色字体 / 组件样式 / 幻灯 / 横幅等），来自 `nextlevelbuilder/ui-ux-pro-max-skill`（MIT）。
+- **gitnexus**：代码智能技能集（10 个：探索 / 影响分析 / 调试 / 重构 / 审查 / 规划等），依赖 GitNexus 命令行与知识图谱服务，来自 `abhigyanpatwari/GitNexus`（PolyForm 非商业协议）。
 
 未来新增 Skill 请在此追加一条，明细写进该技能自己的 README。
