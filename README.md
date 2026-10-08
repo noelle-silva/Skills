@@ -12,6 +12,10 @@
 
 Skill 下的内容只做正式改进：临时或试验性的东西一律不放，只有明确要改进时才修改。
 
+## 新增技能
+
+新增技能的完整流程见 [ADDING-SKILLS.md](./ADDING-SKILLS.md)。
+
 ## 忽略规范
 
 仓库根 `.gitignore` 管全局通用忽略；每个 Skill 目录下各有一个子 `.gitignore`，只管自己特有的产物。
