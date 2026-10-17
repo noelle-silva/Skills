@@ -31,6 +31,7 @@ Skill 下的内容只做正式改进：临时或试验性的东西一律不放�
 - **browser-interaction**：浏览器交互（Chrome DevTools / Playwright）。
 - **hypercortex**：命令行操作 HyperCortex 知识库（读笔记/附件/收藏夹，写笔记/改面/传附件）。
 - **frontend-automated-testing**：前端代码级自动测试（通用搭法；含「源码拆分 / 重构期特征锁定」用法）。
+- **git-worktree-parallel-flow**：多 AI 并行开发的 Git Worktree 规范（集中创建 / 锚点检出 / 未提交改动回搬 / 退役清理）。
 - **anysearch**：实时网页搜索（网页搜索 / 垂直领域搜索 / 并行批量搜索 / URL 正文提取）。
 - **tavily**：网页搜索与内容提取工具集（search / extract / crawl / map / research 等，基于 Tavily 命令行）。
 - **taste-skill**：前端审美与设计技能集（12 个：极简 / 粗野 / 柔和 / 改版 / 图生代码 / 品牌套装等），来自 `Leonxlnx/taste-skill`（MIT）。

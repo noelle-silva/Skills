@@ -16,6 +16,7 @@
 | gitnexus | https://github.com/abhigyanpatwari/GitNexus | PolyForm Noncommercial 1.0.0 |
 | hypercortex | 自研（本库） | 本库自有 |
 | frontend-automated-testing | 自研（本库） | 本库自有 |
+| git-worktree-parallel-flow | 自研（本库） | 本库自有 |
 
 ## 说明
 
